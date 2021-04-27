@@ -1,0 +1,7 @@
+<% unless @blog.user_id == current_user.id %>
+ <% if @favorite.present? %>
+  <% link_to “Add Bookmark” , favorite_path(id: @favorite.id), method: :delete, class: "btn btn-danger" %>
+ <% else %>
+  <% link_to “Remove Bookmark , favorite_path(blog_id), method: :post, class: "btn btn-primary" %>
+ <% end %>
+<% end %>

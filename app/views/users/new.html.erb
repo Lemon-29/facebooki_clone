@@ -1,0 +1,29 @@
+<% if @user.errors.any? %>
+ <div id="error_explanation">
+  <h2><%= pluralize(@user.errors.count, "error") %>We found errors could NOT register <%= @user.name %> </h2>
+  <ul>
+  <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+
+<%= form_with(model: @user, local: true) do |f| %>
+  <ul class="users_form_ul" style="list-style-type: none;" >
+    <li>
+      <%= f.label "Name :" %><br>
+      <%= f.text_field :name %><br>
+    </li>
+    <li>
+      <%= f.label “EmailAddress :" %><br>
+      <%= f.text_field :email %><br>
+    </li>
+      li>
+      <%= f.label "Password : " %><br>
+      <%= f.password_field :password %><br><br>
+    </li>
+     <li>
+      <%= f.submit "Create accout" %>
+    </li>
+  </ul>
+<% end %> 
+  

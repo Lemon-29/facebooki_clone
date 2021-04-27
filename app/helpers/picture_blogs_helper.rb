@@ -1,0 +1,2 @@
+module PictureBlogsHelper
+end
