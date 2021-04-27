@@ -1,7 +1,14 @@
-<% unless @blog.user_id == current_user.id %>
- <% if @favorite.present? %>
-  <% link_to “Add Bookmark” , favorite_path(id: @favorite.id), method: :delete, class: "btn btn-danger" %>
- <% else %>
-  <% link_to “Remove Bookmark , favorite_path(blog_id), method: :post, class: "btn btn-primary" %>
- <% end %>
-<% end %>
+<table>
+  <tr>
+        <th>タイトル</th>
+        <th>内容</th>
+        <th>投稿者</th>
+  </tr>
+  <tr>
+        <td><%= f.blog.title %></td>
+        <td><%= f.blog.content %></td>
+        <td><%= f.blog.user.name %></td>
+  </tr>
+</table>
+
+<%= link_to "一覧へ", blogs_path%>

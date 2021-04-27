@@ -1,2 +1,4 @@
-<h1>PictureBlogs#show</h1>
-<p>Find me in app/views/picture_blogs/show.html.erb</p>
+<h1>ブログ詳細画面</h1>
+<p>タイトル: <%= @picture_blog.title %></p>
+<p>内容: <%= @picture_blog.content %></p>
+<%= link_to "ブログ一覧画面に戻る", picture_blogs_path %>
