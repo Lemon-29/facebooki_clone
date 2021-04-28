@@ -1,4 +1,12 @@
-<h1>ブログ詳細画面</h1>
-<p>タイトル: <%= @picture_blog.title %></p>
-<p>内容: <%= @picture_blog.content %></p>
-<%= link_to "ブログ一覧画面に戻る", picture_blogs_path %>
+<h1>Details screen of blog</h1>
+<p>Title: <%= @picture_blog.title %></p>
+<p>Text: <%= @picture_blog.content %></p>
+<p>Poster: <%= @picture_blog.user.name %></p>
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @picture_blog.image.url %>
+</p>
+<%= link_to 'Edit', edit_feed_path(@picture_blog) %> |
+<%= link_to 'Back', picture_blogs_path %>
+<%= link_to "Go back to list of blog", picture_blogs_path %>

@@ -17,7 +17,7 @@ class PicturesTest < ApplicationSystemTestCase
     fill_in "Content", with: @picture.content
     fill_in "Image", with: @picture.image
     fill_in "Title", with: @picture.title
-    click_on "Create Picture"
+    click_on "Chose a Picture"
 
     assert_text "Picture was successfully created"
     click_on "Back"

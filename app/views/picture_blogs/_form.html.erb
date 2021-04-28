@@ -1,7 +1,7 @@
-<%= form_with(model: @picture_blog, local: true ,url: choose_new_or_edit ) do |form| %>
+<%= form_with(model: picture, local: true, url:choose_new_or_edit) do |form| %>
   <% if @picture_blog.errors.any? %>
     <div id="error_explanation">
-      <h2><%= @picture_blog.errors.count %>件のエラーがあります。</h2>
+      <h2><%= @picture_blog.errors.count %>Errors found</h2>
       <ul>
       <% @picture_blog.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -17,6 +17,11 @@
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
+  <div class="blog_title">
+  <%= form.label :image %>
+  <%= form.file_field :image %>
+  <%= form.hidden_field :image_cache %>
+  </div>
   <%= form.submit %>
 <% end %>
-<%= link_to "ブログ一覧画面に戻る", picture_blogs_path %>
+<%= link_to "Go back to list", picture_blogs_path %>

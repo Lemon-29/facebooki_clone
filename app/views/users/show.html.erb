@@ -1,14 +1,4 @@
-<table>
-  <tr>
-        <th>タイトル</th>
-        <th>内容</th>
-        <th>投稿者</th>
-  </tr>
-  <tr>
-        <td><%= f.blog.title %></td>
-        <td><%= f.blog.content %></td>
-        <td><%= f.blog.user.name %></td>
-  </tr>
-</table>
+<h1><%= @user.name %>'s page</h1>
+<p>EmailAddress: <%= @user.email %></p>
 
-<%= link_to "一覧へ", blogs_path%>
+<%= link_to "Go to list", picture_blogs_path %>

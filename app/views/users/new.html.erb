@@ -1,6 +1,6 @@
 <h1>Sign to Facebook_Clone</h1>
 <% if @user.errors.any? %>
-	<h2><%= pluralize(@user.errors.count, "error") %>件のエラーにより、 <%= @user.name %> が登録出来ませんでした。</h2>
+	<h2><%= pluralize(@user.errors.count, "error") %>Errors、 <%= @user.name %> couldn't register</h2>
 		<ul>
 		<% @user.errors.full_messages.each do |message| %>
 			<li><%= message %></li>

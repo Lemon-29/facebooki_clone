@@ -1,9 +1,9 @@
-<h3>以下の内容で、送信する。</h3>
+<h3>Send the informations below</h3>
 <%= form_with(model: @picture_blog, local: true) do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
-  <p>タイトル:<%= @picture_blog.title %></p>
-  <p>本文:<%= @picture_blog.content %></p>
-  <%= form.submit "登録する" %>
-  <%= form.submit "戻る", name: 'back' %>
+  <p>Title:<%= @picture_blog.title %></p>
+  <p>Text:<%= @picture_blog.content %></p>
+  <%= form.submit "Register" %>
+  <%= form.submit "Back", name: 'back' %>
 <% end %>
