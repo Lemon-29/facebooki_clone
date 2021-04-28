@@ -11,12 +11,12 @@
   <tr>
     <td><%= picture_blog.title %></td>
     <td><%= picture_blog.content %></td>
-    <td><%= blog.user.name %></td>
+    <td><%= picture_blog.user.name %></td>
     <td><%= link_to 'Check the details', picture_blog_path(picture_blog.id) %></td>
-    <td><%= link_to "Edit blog", edit_picture_blog_path(picture_blog.id), data: { confirm: 'Are you sure you wanna edit' } %></td>
-    <td><%= link_to 'Delete blog', picture_blog_path(picture_blog.id), method: :delete ,data: { confirm: 'Are you sure you wanna delete?' } %></td>
+    <td><%= link_to "Edit Post", edit_picture_blog_path(picture_blog.id), data: { confirm: 'Are you sure you wanna edit' } %></td>
+    <td><%= link_to 'Delete Post', picture_blog_path(picture_blog.id), method: :delete ,data: { confirm: 'Are you sure you wanna delete?' } %></td>
   </tr>
 <% end %>
 </table>
 <br>
-<%= link_to 'Post a new blog', new_picture_blog_path %>
+<%= link_to 'Post a new photo', new_picture_blog_path %>

@@ -1,4 +1,4 @@
-class Picture_blog < ApplicationRecord
+class PictureBlog < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true, length: {in: 1..140}
 

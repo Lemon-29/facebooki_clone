@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  # has_many :picture_blogs
   has_many :picture_blogs
   has_secure_password
   before_validation { email.downcase! }

@@ -2,22 +2,22 @@ class PictureBlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   # skip_before_action :login_required, only: [:new, :create]
   def index
-    @picture_blogs = Picture_blog.all
+    @picture_blogs = PictureBlog.all
   end
 
   def new
-    @picture_blog = Picture_blog.new
+    @picture_blog = PictureBlog.new
   end
 
   def create
-    @picture_blog = Picture_blog.new(picture_blog_params)
+    @picture_blog = current_user.picture_blogs.build(picture_blog_params)
     if params[:back]
       render :new
     else
       if @picture_blog.save
-      redirect_to picture_blogs_path, notice: "Created a blog!"
-    else
-      render :new
+        redirect_to picture_blogs_path, notice: "Created a blog!"
+      else
+        render :new
       end
     end
   end
@@ -42,7 +42,7 @@ class PictureBlogsController < ApplicationController
   end
 
   def confirm
-    @picture_blog = Picture_blog.new(picture_blog_params)
+    @picture_blog = current_user.picture_blogs.build(picture_blog_params)
     render :new if @picture_blog.invalid?
   end
 
@@ -52,6 +52,6 @@ class PictureBlogsController < ApplicationController
   end
 
   def set_blog
-    @picture_blog = Picture_blog.find(picture_params[:id])
+    @picture_blog = PictureBlog.find(params[:id])
   end
 end
