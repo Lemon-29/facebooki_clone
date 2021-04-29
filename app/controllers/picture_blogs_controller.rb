@@ -1,6 +1,6 @@
 class PictureBlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  # skip_before_action :login_required, only: [:new, :create]
+
   def index
     @picture_blogs = PictureBlog.all
   end
